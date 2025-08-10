@@ -26,7 +26,13 @@
       "Bash(mvn test:*)",
       "mcp__octocode__githubSearchCode",
       "mcp__serena__replace_regex",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "mcp__octocode__githubSearchRepositories",
+      "mcp__octocode__githubViewRepoStructure",
+      "mcp__octocode__githubGetFileContent",
+      "Bash(mv:*)",
+      "Bash(java:*)",
+      "Bash(run.bat --help)"
     ],
     "deny": []
   }

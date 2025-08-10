@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: com.musicorganizer.organizer.NIOFileOrganizerTest
--------------------------------------------------------------------------------
-Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.739 s -- in com.musicorganizer.organizer.NIOFileOrganizerTest
