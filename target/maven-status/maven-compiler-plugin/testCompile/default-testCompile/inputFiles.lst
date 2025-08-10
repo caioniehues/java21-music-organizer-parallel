@@ -1,10 +1,12 @@
-C:\Users\caio\Desktop\New folder\music_organizer_java\src\test\java\com\musicorganizer\performance\LargeFilePerformanceTest.java
 C:\Users\caio\Desktop\New folder\music_organizer_java\src\test\java\com\musicorganizer\processor\ConcurrentDuplicateFinderTest.java
+C:\Users\caio\Desktop\New folder\music_organizer_java\src\test\java\com\musicorganizer\service\ImprovedMusicBrainzServiceTest.java
+C:\Users\caio\Desktop\New folder\music_organizer_java\src\test\java\com\musicorganizer\config\PatternEngineTest.java
+C:\Users\caio\Desktop\New folder\music_organizer_java\src\test\java\com\musicorganizer\config\ConfigurationLoaderTest.java
+C:\Users\caio\Desktop\New folder\music_organizer_java\src\test\java\com\musicorganizer\performance\LargeFilePerformanceTest.java
 C:\Users\caio\Desktop\New folder\music_organizer_java\src\test\java\com\musicorganizer\scanner\ParallelMusicScannerTest.java
 C:\Users\caio\Desktop\New folder\music_organizer_java\src\test\java\com\musicorganizer\service\MusicBrainzServiceTest.java
 C:\Users\caio\Desktop\New folder\music_organizer_java\src\test\java\com\musicorganizer\test\util\TestAudioFileFactory.java
 C:\Users\caio\Desktop\New folder\music_organizer_java\src\test\java\com\musicorganizer\organizer\SimpleNIOFileOrganizerTest.java
-C:\Users\caio\Desktop\New folder\music_organizer_java\src\test\java\com\musicorganizer\service\ImprovedMusicBrainzServiceTest.java
 C:\Users\caio\Desktop\New folder\music_organizer_java\src\test\java\com\musicorganizer\validator\CollectionValidatorTest.java
 C:\Users\caio\Desktop\New folder\music_organizer_java\src\test\java\com\musicorganizer\example\RefactoredUsageExample.java
 C:\Users\caio\Desktop\New folder\music_organizer_java\src\test\java\com\musicorganizer\processor\BatchMetadataProcessorTest.java

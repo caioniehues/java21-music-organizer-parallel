@@ -1,0 +1,88 @@
+# Music Organizer Configuration
+# This YAML file demonstrates the complete configuration structure
+
+version: "1.0"
+default_profile: "standard"
+
+# Organization profiles define file naming patterns
+profiles:
+  standard:
+    pattern: "{artist}/{album}/{track:02d} - {title}"
+    duplicate_action: "skip"
+    create_artist_folder: true
+    sanitize_filenames: true
+    
+  flat:
+    pattern: "{artist} - {album} - {track:02d} - {title}"
+    duplicate_action: "rename"
+    create_artist_folder: false
+    sanitize_filenames: true
+    
+  detailed:
+    pattern: "{genre}/{artist} ({year})/{album}/{track:02d} - {title}"
+    duplicate_action: "ask"
+    create_artist_folder: true
+    sanitize_filenames: true
+    
+  classical:
+    pattern: "{artist}/{album}/{disc:02d}-{track:02d} - {title}"
+    duplicate_action: "ask"
+    create_artist_folder: true
+    sanitize_filenames: true
+
+# Directory mappings connect source directories to target directories
+directories:
+  - name: "Main Music Library"
+    source: "/Users/music/incoming"
+    target: "/Users/music/library"
+    profile: "standard"
+    watch: true
+    recursive: true
+    filters:
+      extensions: ["mp3", "flac", "wav", "m4a", "aac"]
+      min_size: 1000000  # 1MB minimum
+      max_size: null
+      exclude_patterns: [".*\\.tmp$", ".*\\.temp$"]
+      
+  - name: "Classical Collection"
+    source: "/Users/music/classical-incoming"
+    target: "/Users/music/classical"
+    profile: "classical"
+    watch: false
+    recursive: true
+    filters:
+      extensions: ["flac", "wav"]
+      min_size: 10000000  # 10MB minimum for high-quality
+      max_size: null
+      exclude_patterns: []
+
+# Watch service configuration for automated processing
+watch_service:
+  enabled: true
+  poll_interval: "PT1M"      # 1 minute in ISO-8601 format
+  stability_delay: "PT30S"   # 30 seconds
+  batch_size: 50
+  virtual_thread_pool_size: 1000
+
+# File rules for conditional profile assignment
+rules:
+  # High-quality lossless files get detailed organization
+  - type: "format"
+    formats: ["flac", "wav", "aiff", "dsd"]
+    target_profile: "detailed"
+    
+  # High bitrate files get standard organization  
+  - type: "bitrate"
+    min_bitrate: 320
+    target_profile: "standard"
+    
+  # Classical music gets specialized organization
+  - type: "genre"
+    genre: "classical"
+    target_profile: "classical"
+    
+  # Large files (likely lossless) get detailed organization
+  - type: "size"
+    min_size: 25000000  # 25MB
+    max_size: 9223372036854775807  # Long.MAX_VALUE
+    target_profile: "detailed"

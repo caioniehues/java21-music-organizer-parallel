@@ -32,8 +32,13 @@
       "mcp__octocode__githubGetFileContent",
       "Bash(mv:*)",
       "Bash(java:*)",
-      "Bash(run.bat --help)"
+      "Bash(run.bat --help)",
+      "mcp__serena__find_file",
+      "mcp__serena__read_memory"
     ],
-    "deny": []
+    "deny": [],
+    "additionalDirectories": [
+      "C:\\Users\\caio\\.claude"
+    ]
   }
 }

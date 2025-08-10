@@ -2,6 +2,13 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Memory Markers
+**IMPORTANT**: ALWAYS READ THE INSTRUCTIONS DEFINED IN C:\Users\caio\.claude/CLAUDE.md before excecuting any instruction
+**IMPORTANT**: proactively delegate tasks to agents based on the task description of the request, the description field in the subagent configurations and current context and available tools
+**IMPORTANT**: For complex workflows, you can chain multiple subagents, such as this example: "> First use the code-analyzer subagent to find performance issues, then use the optimizer subagent to fix them"
+**IMPORTANT**: To encourage more proactive subagent use, include phrases like “use PROACTIVELY” or “MUST BE USED” in your subagent description field.
+**IMPORTANT**: DYNAMIC SUBAGENT SELECTION: Claude Code intelligently selects subagents based on context. Make your description fields specific and action-oriented for best results.
+
 ## Project Overview
 
 High-performance music library organizer built with Java 21, leveraging virtual threads for massive parallel processing of audio files. Processes thousands of files concurrently with duplicate detection, metadata management, and intelligent organization.
@@ -194,14 +201,5 @@ jmap -histo:live <pid>
 - Windows path limit: 260 characters (use UNC paths for longer)
 - Maximum concurrent files limited by OS file handles
 
-## Development Instructions
 
-- **IMPORTANT**: ALWAYS READ THE INSTRUCTIONS DEFINED IN C:\Users\caio\.claude/CLAUDE.md before excecuting any instruction
 
-## Memory Markers
-
-- **IMPORTANT! ALWAYS USE INTELLIJ MCP TOOLS!!**
-- Important: proactively delegate tasks to agents based on the task description of the request, the description field in the subagent configurations and current context and available tools
-- Important: For complex workflows, you can chain multiple subagents, such as this example: "> First use the code-analyzer subagent to find performance issues, then use the optimizer subagent to fix them"
-- IMPORTANT: To encourage more proactive subagent use, include phrases like “use PROACTIVELY” or “MUST BE USED” in your subagent description field.
-- IMPORTANT: DYNAMIC SUBAGENT SELECTION: Claude Code intelligently selects subagents based on context. Make your description fields specific and action-oriented for best results.

@@ -1,7 +1,6 @@
 package com.musicorganizer.scanner;
 
-import com.google.common.jimfs.Configuration;
-import com.google.common.jimfs.Jimfs;
+// Removed Jimfs imports - using real temp directories instead
 import com.musicorganizer.model.*;
 import org.jaudiotagger.audio.AudioFile;
 import org.jaudiotagger.audio.AudioFileIO;
@@ -14,7 +13,6 @@ import org.mockito.MockedStatic;
 import org.mockito.Mockito;
 
 import java.io.IOException;
-import java.nio.file.FileSystem;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
@@ -40,7 +38,7 @@ import static org.mockito.Mockito.*;
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class ParallelMusicScannerTest {
 
-    private FileSystem fileSystem;
+    @TempDir
     private Path rootPath;
     private ParallelMusicScanner scanner;
     private MockedStatic<AudioFileIO> audioFileIOMock;
@@ -50,10 +48,7 @@ class ParallelMusicScannerTest {
 
     @BeforeEach
     void setUp() throws IOException {
-        // Create in-memory file system for testing
-        fileSystem = Jimfs.newFileSystem(Configuration.unix());
-        rootPath = fileSystem.getPath("/test/music");
-        Files.createDirectories(rootPath);
+        // rootPath is automatically created by @TempDir annotation
         
         // Initialize scanner with test configuration
         scanner = new ParallelMusicScanner(100, true, true);
@@ -97,9 +92,6 @@ class ParallelMusicScannerTest {
         if (audioFileIOMock != null) {
             audioFileIOMock.close();
         }
-        if (fileSystem != null) {
-            fileSystem.close();
-        }
     }
 
     @Nested
@@ -127,7 +119,7 @@ class ParallelMusicScannerTest {
         @DisplayName("Should handle non-existent directory")
         void shouldHandleNonExistentDirectory() {
             // Given: Non-existent directory path
-            Path nonExistentPath = fileSystem.getPath("/nonexistent");
+            Path nonExistentPath = rootPath.resolve("../nonexistent");
             
             // When: Scanning non-existent directory
             ScanResult result = scanner.scanDirectory(nonExistentPath);
