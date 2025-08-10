@@ -1,0 +1,42 @@
+-------------------------------------------------------------------------------
+Test set: com.musicorganizer.service.MusicBrainzServiceTest$IntegrationTests
+-------------------------------------------------------------------------------
+Tests run: 23, Failures: 2, Errors: 1, Skipped: 0, Time elapsed: 0.004 s <<< FAILURE! -- in com.musicorganizer.service.MusicBrainzServiceTest$IntegrationTests
+com.musicorganizer.service.MusicBrainzServiceTest.testRateLimiting_SingleThreaded -- Time elapsed: 0.008 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: Rate limiting should ensure at least 1.5 seconds for 3 requests, actual: 2ms ==> expected: <true> but was: <false>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:214)
+	at com.musicorganizer.service.MusicBrainzServiceTest.testRateLimiting_SingleThreaded(MusicBrainzServiceTest.java:355)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+
+com.musicorganizer.service.MusicBrainzServiceTest.testRateLimiting_Concurrent -- Time elapsed: 0.006 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: Rate limiting should enforce proper timing. Expected >= 3200ms, actual: 3ms ==> expected: <true> but was: <false>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:214)
+	at com.musicorganizer.service.MusicBrainzServiceTest.testRateLimiting_Concurrent(MusicBrainzServiceTest.java:408)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+
+com.musicorganizer.service.MusicBrainzServiceTest.testExecutorServiceResourceManagement -- Time elapsed: 0.598 s <<< ERROR!
+java.util.concurrent.RejectedExecutionException
+	at java.base/java.util.concurrent.ThreadPerTaskExecutor.ensureNotShutdown(ThreadPerTaskExecutor.java:87)
+	at java.base/java.util.concurrent.ThreadPerTaskExecutor.start(ThreadPerTaskExecutor.java:247)
+	at java.base/java.util.concurrent.ThreadPerTaskExecutor.execute(ThreadPerTaskExecutor.java:255)
+	at java.base/java.util.concurrent.CompletableFuture.asyncSupplyStage(CompletableFuture.java:1828)
+	at java.base/java.util.concurrent.CompletableFuture.supplyAsync(CompletableFuture.java:2051)
+	at com.musicorganizer.service.MusicBrainzService.lookupTrack(MusicBrainzService.java:123)
+	at com.musicorganizer.service.MusicBrainzService.lookupTrack(MusicBrainzService.java:112)
+	at com.musicorganizer.service.MusicBrainzServiceTest.testExecutorServiceResourceManagement(MusicBrainzServiceTest.java:788)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+

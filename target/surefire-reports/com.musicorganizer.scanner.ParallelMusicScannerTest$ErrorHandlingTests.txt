@@ -1,0 +1,56 @@
+-------------------------------------------------------------------------------
+Test set: com.musicorganizer.scanner.ParallelMusicScannerTest$ErrorHandlingTests
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 4, Errors: 0, Skipped: 0, Time elapsed: 0.019 s <<< FAILURE! -- in com.musicorganizer.scanner.ParallelMusicScannerTest$ErrorHandlingTests
+com.musicorganizer.scanner.ParallelMusicScannerTest$ErrorHandlingTests.shouldHandleIOErrorsDuringFileReading -- Time elapsed: 0.005 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: Unexpected type, expected: <com.musicorganizer.model.ScanResult.Failure> but was: <com.musicorganizer.model.ScanResult.Success>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertInstanceOf.assertInstanceOf(AssertInstanceOf.java:49)
+	at org.junit.jupiter.api.AssertInstanceOf.assertInstanceOf(AssertInstanceOf.java:31)
+	at org.junit.jupiter.api.Assertions.assertInstanceOf(Assertions.java:3583)
+	at com.musicorganizer.scanner.ParallelMusicScannerTest$ErrorHandlingTests.shouldHandleIOErrorsDuringFileReading(ParallelMusicScannerTest.java:585)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+
+com.musicorganizer.scanner.ParallelMusicScannerTest$ErrorHandlingTests.shouldHandlePermissionDeniedErrors -- Time elapsed: 0.004 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: Unexpected type, expected: <com.musicorganizer.model.ScanResult.Failure> but was: <com.musicorganizer.model.ScanResult.Success>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertInstanceOf.assertInstanceOf(AssertInstanceOf.java:49)
+	at org.junit.jupiter.api.AssertInstanceOf.assertInstanceOf(AssertInstanceOf.java:31)
+	at org.junit.jupiter.api.Assertions.assertInstanceOf(Assertions.java:3583)
+	at com.musicorganizer.scanner.ParallelMusicScannerTest$ErrorHandlingTests.shouldHandlePermissionDeniedErrors(ParallelMusicScannerTest.java:605)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+
+com.musicorganizer.scanner.ParallelMusicScannerTest$ErrorHandlingTests.shouldHandleOutOfMemoryErrorGracefully -- Time elapsed: 0.003 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: Unexpected type, expected: <com.musicorganizer.model.ScanResult.Failure> but was: <com.musicorganizer.model.ScanResult.Success>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertInstanceOf.assertInstanceOf(AssertInstanceOf.java:49)
+	at org.junit.jupiter.api.AssertInstanceOf.assertInstanceOf(AssertInstanceOf.java:31)
+	at org.junit.jupiter.api.Assertions.assertInstanceOf(Assertions.java:3583)
+	at com.musicorganizer.scanner.ParallelMusicScannerTest$ErrorHandlingTests.shouldHandleOutOfMemoryErrorGracefully(ParallelMusicScannerTest.java:647)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+
+com.musicorganizer.scanner.ParallelMusicScannerTest$ErrorHandlingTests.shouldContinueProcessingAfterIndividualFileFailures -- Time elapsed: 0.004 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: Unexpected type, expected: <com.musicorganizer.model.ScanResult.Partial> but was: <com.musicorganizer.model.ScanResult.Success>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertInstanceOf.assertInstanceOf(AssertInstanceOf.java:49)
+	at org.junit.jupiter.api.AssertInstanceOf.assertInstanceOf(AssertInstanceOf.java:31)
+	at org.junit.jupiter.api.Assertions.assertInstanceOf(Assertions.java:3583)
+	at com.musicorganizer.scanner.ParallelMusicScannerTest$ErrorHandlingTests.shouldContinueProcessingAfterIndividualFileFailures(ParallelMusicScannerTest.java:627)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+
